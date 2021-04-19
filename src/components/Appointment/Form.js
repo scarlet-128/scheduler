@@ -8,6 +8,7 @@ export default function Form(props) {
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
   const save = () => {
+
     if(name ==="") {
       setError("student name cannot be blank")
       return;
@@ -15,6 +16,7 @@ export default function Form(props) {
     props.onSave(name, interviewer);
   };
   
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
