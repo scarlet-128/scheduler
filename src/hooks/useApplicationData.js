@@ -39,12 +39,17 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    setState({
-      ...state,
-      appointments,
-    });
-    updateSpots(state.day, state.days, "book");
-    return axios.put(`/api/appointments/${id}`, appointment);
+    return axios.put(`/api/appointments/${id}`, appointment)
+    .then (() => {
+      setState({
+        ...state,
+        appointments,
+      });
+      updateSpots(state.day, state.days, "book");
+    })
+    
+    
+    
   }
 
 
@@ -57,12 +62,17 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    setState({
-      ...state,
-      appointments,
-    });
-    updateSpots(state.day, state.days, "delete");
-    return axios.delete(`/api/appointments/${id}`, appointment);
+    return axios.delete(`/api/appointments/${id}`, appointment)
+    .then(() => {
+      setState({
+        ...state,
+        appointments,
+      });
+      updateSpots(state.day, state.days, "delete");
+    })
+    
+    
+    
   };
   
 
