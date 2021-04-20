@@ -30,7 +30,6 @@ export default function useApplicationData(props) {
 
   const setDay = (day) => setState({ ...state, day });
   function bookInterview(id, interview) {
-    console.log("id, interview: ", id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
@@ -39,12 +38,12 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
+    updateSpots(state.day, state.days, "book");
     return axios.put(`/api/appointments/${id}`, appointment).then(() => {
       setState({
         ...state,
         appointments,
       });
-      updateSpots(state.day, state.days, "book");
     });
   }
 
@@ -57,12 +56,12 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
+    updateSpots(state.day, state.days, "delete");
     return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
       setState({
         ...state,
         appointments,
       });
-      updateSpots(state.day, state.days, "delete");
     });
   }
 
