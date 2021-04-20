@@ -7,8 +7,9 @@
     "classnames": "^2.3.1",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.0.0"
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.0.0",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,7 +42,8 @@
     "@testing-library/react": "^8.0.7",
     "@testing-library/react-hooks": "^5.1.1",
     "babel-loader": "^8.0.5",
-    "node-sass": "^4.14.0"
+    "node-sass": "^4.14.0",
+    "prop-types": "^15.7.2"
   },
   "jest": {
     "watchPathIgnorePatterns": [
