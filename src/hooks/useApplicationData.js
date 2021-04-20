@@ -11,10 +11,18 @@ export default function useApplicationData(props) {
   const GET_DAYS = axios.get("/api/days");
   const GET_APPOINTMENTS = axios.get("/api/appointments");
   const GET_INTERVIEWERS = axios.get("/api/interviewers");
-  const updateSpots = (day, days, func) => {
-    const dayObj = days.filter((a) => a.name === day)[0];
-    if (func === "book") dayObj.spots -= 1;
-    if (func === "delete") dayObj.spots += 1;
+  const updateSpots = ( days, appointments) => {
+    return days.map((day) => {
+      let spots = 0;
+      day.appointments.forEach((id) => {
+        if (appointments[id].interview === null) spots += 1;
+      }) 
+      return { ...day, spots };
+    });
+
+    console.log("day", days);
+    // if (func === "book") dayObj.spots -= 1;
+    // if (func === "delete") dayObj.spots += 1;
   };
 
   useEffect(() => {
@@ -38,12 +46,13 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    updateSpots(state.day, state.days, "book");
     return axios.put(`/api/appointments/${id}`, appointment).then(() => {
       setState({
         ...state,
         appointments,
+        days: updateSpots(state.days, appointments)
       });
+      
     });
   }
 
@@ -56,13 +65,15 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    updateSpots(state.day, state.days, "delete");
+
     return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
       setState({
         ...state,
         appointments,
+        days: updateSpots(state.days, appointments)
       });
-    });
+      });
+    
   }
 
   return { state, setDay, bookInterview, cancelInterview };

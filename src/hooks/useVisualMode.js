@@ -15,7 +15,6 @@ export default function useVisualMode(initial) {
 		});
 	};
   function back() {
-    console.log("history",history, initial)
     if (history.length >= 2) {
       history.pop();
       return setMode(history[history.length - 1]);
