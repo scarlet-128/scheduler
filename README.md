@@ -82,8 +82,6 @@ This is an example of how to list things you need to use the software and how to
 !["error headle"](https://github.com/scarlet-128/scheduler/blob/master/docs/When%20getting%20error.png?raw=true)
 Also include the error handler
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
