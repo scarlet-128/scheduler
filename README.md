@@ -39,7 +39,7 @@ The scheduler works perfectly for booking an interview, manage the interviewers 
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React](https://reactjs.org/)
-* [Webpack](https://webpack.js.org/), [Babel](hthttps://babeljs.io/)
+* [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/)
 * [Axios](https://github.com/axios/axios)
 * [Storybook](https://storybook.js.org/),[Webpack Dev Server](https://github.com/webpack/webpack-dev-server),[Jest](https://jestjs.io/),[ Testing Library](https://testing-library.com/),
 
@@ -61,7 +61,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free DATA at [https://example.com](https://example.com)
+1. Get a fake DATA at [https://localhost:8001/api/days](https://localhost:8001/api/days)
 2. Clone the repo
    ```
    git clone https://github.com/scarlet-128/scheduler
@@ -104,9 +104,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
-SCARLET - scarletshao@gmail.com
-
 Project Link: [https://github.com/scarlet-128/scheduler](https://github.com/scarlet-128/scheduler)
 
 
