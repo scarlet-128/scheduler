@@ -15,17 +15,6 @@ describe("Form", () => {
     },
   ];
 
-  it("renders without crashing", () => {
-    const onSave = jest.fn();
-    render(
-      <Form
-        interviewers={interviewers}
-        name="Lydia Miller-Jones"
-        onSave={onSave}
-      />
-    );
-  });
-
   it("renders without student name if not provided", () => {
     const { getByPlaceholderText } = render(
       <Form interviewers={interviewers} />

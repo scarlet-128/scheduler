@@ -42,7 +42,7 @@ export default function Appointment(props) {
       .catch((error) => transition(ERROR_DELETE, true));
   };
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header
         id={props.id}
         className="appointment:last-of-type"
@@ -64,7 +64,7 @@ export default function Appointment(props) {
       {mode === DELETING && <Status message="Deleting" />}
       {mode === CONFIRM && (
         <Confirm
-          message="Are you sure?"
+          message="Are you sure you would like to delete?"
           onCancel={() => transition(SHOW)}
           onConfirm={deleteInterview}
         />

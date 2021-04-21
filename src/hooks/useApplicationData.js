@@ -66,7 +66,7 @@ export default function useApplicationData(props) {
       [id]: appointment,
     };
 
-    return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
+     return axios.delete(`/api/appointments/${id}`).then(() => {
       setState({
         ...state,
         appointments,
