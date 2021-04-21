@@ -89,7 +89,6 @@ describe("Application", () => {
     const appointments = getAllByTestId(container, "appointment");
     const appointment = appointments[1];
     axios.put.mockRejectedValueOnce();
-    console.log("^^^", prettyDOM(appointment));
     fireEvent.click(getByAltText(appointment, "Edit"));
     expect(getByText(appointment, "Interviewer")).toBeInTheDocument();
     fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
